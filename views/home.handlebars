@@ -1,0 +1,17 @@
+<main class="has-background-primary-light">
+ <div class="divider"></div>
+  <div class="container">
+        <h4 class="teal-text text-darken-2 center"> Recent Posts</h4>
+        {{#each post}}
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <h6 class="teal-text"> {{post.title}}</h6>
+            <p>
+              {{post.body}}</p>
+          </div>
+          </p>
+        </a>
+        {{/each }}
+</div>
+{{>post}}
+{{>editpost}}
+</main>

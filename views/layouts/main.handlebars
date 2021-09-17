@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registry</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+   <link rel="stylesheet" href="../../myBulma/css/mystyles.css">
+</head>
+
+<header>
+<section class="hero is-dark is-medium-with-navbar">
+    <nav class="navbar is-black " role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="home">Home</a>
+            <a class="navbar-item">Dashboard</a>
+              {{#if logged_in}}
+            <a class="navbar-item"> Logout</a>
+            {{else}}
+            <a class="navbar-item" href ="login">Login</a>
+           
+            {{/if}}   
+          </div>
+        </div>
+      </div>
+    </nav>
+  <div class="hero-body">
+    <div class="button is-static is-large has-background-primary-light" >
+    <p class="title has-text-black">
+    The Tech Blog
+    </p>
+  </div>
+  </div>
+</section>
+</header>
+
+
+<body class= "has-background-primary-light">
+
+ 
+  <main class="container container-fluid mt-5">
+    {{{ body }}}
+  </main>
+  <footer>
+      
+  </footer>
+  {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+</body>
+
+
+</html>
