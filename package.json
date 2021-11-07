@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "14 Model-View-Controller (MVC): Tech Blog",
   "main": "server.js",
+  "engine": "node",
   "scripts": {
     "test": "\"echo \\\"Error: no test specified\\\" && exit 1\"",
     "start": "node server.js",
