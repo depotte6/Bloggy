@@ -4,7 +4,7 @@
   "description": "14 Model-View-Controller (MVC): Tech Blog",
   "main": "server.js",
   "engines": {
-    "node": "14"
+    "npm": "7.x"
   },
   "scripts": {
     "test": "\"echo \\\"Error: no test specified\\\" && exit 1\"",
