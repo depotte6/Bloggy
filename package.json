@@ -5,8 +5,7 @@
   "main": "server.js",
   "proxy": "http://localhost:4001",
   "engines": {
-    "node": "14.17.4",
-    "npm": "7.x"
+    "node": "14.17.4"
   },
   "scripts": {
     "test": "\"echo \\\"Error: no test specified\\\" && exit 1\"",
