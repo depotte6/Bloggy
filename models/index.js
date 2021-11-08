@@ -1,6 +1,6 @@
 
 const Post = require('./Post');
 const Comment = require('./Comment');
-const User = require('models/User.js');
+const User = require('./User');
 
 module.exports = { User, Post, Comment };
