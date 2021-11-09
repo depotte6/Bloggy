@@ -8,15 +8,16 @@ const exphbs = require("express-handlebars");
 const sequelize = require("./config/connection");
 //Session
 const session = require("express-session");
-const SequlizeStore = require("connect-session-sequelize")(session.Store);
-
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const helpers = require('./utils/helper');
+const hbs = exphbs.create({ helpers });
 //set up the actual session
 const sess = {
   secret: "super secret secret",
   cookie: {},
   resave: false,
   saveUninitialized: true,
-  store: new SequlizeStore({
+  store: new SequelizeStore({
     db: sequelize,
   }),
 };
