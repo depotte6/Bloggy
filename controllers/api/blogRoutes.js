@@ -59,7 +59,7 @@ router.post('/new', (req, res) => {
         topic_id: req.body.topic_id
     }).then((postData) => {
             console.log(postData);
-            document.location.replace('/');
+            document.location.replace('/login');
         }).catch((err) => {
             res.json(err);
         });
