@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
         attributes: ["username"],
       },
     ],
-  }) //include the posts and comments of this user
+  }) 
     .then((dbCommentData) => {
       res.json(dbCommentData);
     })
@@ -41,9 +41,8 @@ router.get("/:id", (req, res) => {
           res.status(404).json({ message: "No Post found with this id" });
           return;
         }
-        // console.log("postData: "+postData);
         const post = postData.get({ plain: true });
-        // console.log(post);
+        console.log(post);
         res.render('indivpost', {post, layout: 'main', view: 'indivpost'});
       })
       .catch((err) => {
@@ -59,7 +58,7 @@ router.post('/new', (req, res) => {
         topic_id: req.body.topic_id
     }).then((postData) => {
             console.log(postData);
-            document.location.replace('/login');
+            document.location.replace('/dashboard');
         }).catch((err) => {
             res.json(err);
         });
@@ -88,7 +87,7 @@ router.delete('/:id', async (req, res) => {
     const postData = await Post.destroy({
       where: {
         post_id: req.params.id,
-        // user_id: req.session.user_id,
+        user_id: req.session.user_id,
       },
     });
 
@@ -96,10 +95,11 @@ router.delete('/:id', async (req, res) => {
       res.status(404).json({ message: 'No post found with this id.' });
       return;
     }
-    res.status(200).json(postData);
+    res.status(200).json(postData)
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 
 module.exports = router;

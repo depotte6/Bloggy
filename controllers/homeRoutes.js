@@ -34,7 +34,6 @@ router.get('/', (req, res) => {
       ]
   })
       .then(dbPostData => {
-          //serialize the entry array
           const posts = dbPostData.map(post => post.get({ plain: true }));
           // pass a single post object into the homepage template
           res.render('homepage', { 
@@ -58,7 +57,6 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-//Single Post Route
 router.get('/post/:id', (req, res) => {
   Post.findOne({
       where: {
@@ -92,10 +90,8 @@ router.get('/post/:id', (req, res) => {
               return;
           }
 
-          //serialize the data
           const post =dbPostData.get({ plain: true });
 
-          //pass data to template
           res.render('single-post', { 
               post,
               loggedIn: req.session.loggedIn
