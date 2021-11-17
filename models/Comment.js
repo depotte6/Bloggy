@@ -1,4 +1,4 @@
-const{ Sequelize, Model, DataTypes } = require('sequelize')
+const{  Model, DataTypes } = require('sequelize')
 const sequelize = require('../config/connection')
 
 class Comment extends Model {}
@@ -18,15 +18,12 @@ Comment.init(
     },
   },
     {
-    
-        sequelize,
+         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'post'
-        
-
+        modelName: 'comment'
   }
 );
 
-module.exports = Comment
+module.exports = Comment;
