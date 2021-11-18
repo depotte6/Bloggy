@@ -13,7 +13,7 @@ Post.init(
     title: {
       type: DataTypes.STRING
     },
-    content: {
+    post_text: {
       type: DataTypes.STRING,
     },
     user_id: {
@@ -24,13 +24,13 @@ Post.init(
       }
   }
 },
-{
-  sequelize,
-  timestamps: true,
-  freezeTableName: true,
-  underscored: true,
-  modelName: 'post',
-}
+  {
+    sequelize,
+    timestamps: true,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'post',
+  }
 )
 
 module.exports = Post;

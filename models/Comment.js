@@ -10,32 +10,32 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true
     },
-    content: {
+    comment_text: {
       type: DataTypes.STRING(4000),
       allowNull: false,
+    },
+    user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id'
+        }
+    },
+    post_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'post',
+            key: 'id'
+        }
+    }
   },
-  user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-          model: 'user',
-          key: 'id'
-      }
-  },
-  post_id: {
-      type: DataTypes.INTEGER,
-      references: {
-          model: 'post',
-          key: 'id'
-      }
+  {
+    sequelize,
+    timestamps: true,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'comment',
   }
-},
-{
-  sequelize,
-  timestamps: true,
-  freezeTableName: true,
-  underscored: true,
-  modelName: 'comment',
-}
 )
 
 module.exports = Comment;
