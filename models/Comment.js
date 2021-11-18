@@ -10,23 +10,32 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true
     },
-    title: {
-      type: DataTypes.STRING
-    },
-    body: {
-      type: DataTypes.STRING,
-    },
+    content: {
+      type: DataTypes.STRING(4000),
+      allowNull: false,
   },
-    {
-    
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'comment'
-        
-
+  user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+          model: 'user',
+          key: 'id'
+      }
+  },
+  post_id: {
+      type: DataTypes.INTEGER,
+      references: {
+          model: 'post',
+          key: 'id'
+      }
   }
-);
+},
+{
+  sequelize,
+  timestamps: true,
+  freezeTableName: true,
+  underscored: true,
+  modelName: 'comment',
+}
+)
 
-module.exports = Comment
+module.exports = Comment;
