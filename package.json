@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "14 Model-View-Controller (MVC): Tech Blog",
   "main": "server.js",
-  "proxy": "http://localhost:4001",
   "engines": {
     "node": "14.17.4"
   },
