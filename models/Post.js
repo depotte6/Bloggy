@@ -13,7 +13,7 @@ Post.init(
     title: {
       type: DataTypes.STRING
     },
-    post_text: {
+    content: {
       type: DataTypes.STRING,
     },
     user_id: {

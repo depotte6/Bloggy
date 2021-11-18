@@ -2,7 +2,7 @@ async function editPost(event) {
     event.preventDefault();
 
     const title = document.querySelector('input[name="post-title"]').value;
-    const post_text = document.querySelector('input[name="post-content"]').value;
+    const content = document.querySelector('input[name="post-content"]').value;
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
       ];
@@ -11,7 +11,7 @@ async function editPost(event) {
         method: 'PUT',
         body: JSON.stringify({
             title,
-            post_text
+            content
         }),
         headers: {
             'Content-Type': 'application/json'

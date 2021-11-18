@@ -1,15 +1,15 @@
 [
     {
       "title": "Fertilizer",
-      "post_text": "My go to fertilizer is Miracle-Grow. Anybody have any other recommentdations?"
+      "content": "My go to fertilizer is Miracle-Grow. Anybody have any other recommentdations?"
     },
     {
       "title": "Pest Control",
-      "post_text": "I have grubs in my front yard eating my leafy plants. help!"
+      "content": "I have grubs in my front yard eating my leafy plants. help!"
     },
     {
       "title": "Test",
-      "post_text": "test"
+      "content": "test"
       
   
     }
