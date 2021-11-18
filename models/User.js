@@ -34,7 +34,7 @@ User.init(
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
-       beforeUpdate: async (updatedUserData) => {
+      async beforeUpdate(updatedUserData) {
         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
         return updatedUserData;
       }
@@ -45,6 +45,6 @@ User.init(
     underscored: true,
     modelName: 'user',
   }
-)
+);
 
-module.exports =  User;
+module.exports =  User
